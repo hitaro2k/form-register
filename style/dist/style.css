@@ -337,6 +337,7 @@ html button {
   flex-direction: column;
   align-items: center;
   margin-top: 275px;
+  overflow-x: hidden;
 }
 .main .advice .container {
   display: flex;
