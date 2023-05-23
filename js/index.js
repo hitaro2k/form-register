@@ -82,9 +82,7 @@ listItem.forEach(item =>{
     
 })
 
-startBtn.addEventListener("click" , ()=>{
-    
-})
+
 startBtn.onmouseenter = ()=>{
     startBtn.style.border = "2px solid purple" 
     startBtn.style.transition = "ease 2s"   
