@@ -1083,6 +1083,7 @@ html button {
 }
 .main .reviews {
   margin-top: 190px;
+  overflow-x: hidden;
 }
 .main .reviews .container {
   display: flex;
