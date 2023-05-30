@@ -450,12 +450,17 @@ html {
               cursor: pointer;
             }
             .list-button {
+              display: flex;
+              flex-direction: row;
+              align-items: center;
+              justify-content: center;
               color: white;
               width: 118px;
               height: 40px;
               background: rgba(19, 19, 19, 0.4);
               backdrop-filter: blur(5px);
               border-radius: 20px;
+              border: 1px solid;
               border-color: rgba(81, 40, 136, 0.4) rgba(255, 255, 255, 0)
                 rgba(245, 58, 238, 0.4) rgba(0, 0, 0, 0);
               cursor: pointer;
@@ -1150,7 +1155,7 @@ html {
           display: flex;
           flex-direction: row;
           gap: 0px 40px;
-          #media{
+          .media{
             cursor: pointer;
           }
         }
@@ -1224,7 +1229,7 @@ html {
     opacity: 1;
   }
 }
-#blink {
+.blink {
   animation: blink 3s infinite;
 }
 .active{
