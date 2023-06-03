@@ -59,12 +59,13 @@
         </div>
 
         <div class="popup__register">
-         
           <div class="left-side">
             <img src="/img/about-gamma.webp" alt="" class="right-side__image">
           </div>
           <div class="right-side">
-            
+            <button class="close__button">
+              <img src="/img/close-form.svg" alt="close" class="close-form__register">
+            </button>
             <div class="choose">
               <p class="title__fluence" id="sign-fluence">As Influencers</p>
               <p class="title__brand" id="sign-brands">As Brands</p>
@@ -109,6 +110,9 @@
         </div>
 
         <div class="tell-us">
+          <button class="close__button tell-us__close">
+            <img src="/img/close-form.svg" alt="close" class="close-form__register">
+          </button>
           <h2 class="title">Tell us who are you?</h2>
           <div class="inputs">
             <div class="input__wrapper">
@@ -144,12 +148,34 @@
                 <li class="list-button" id="login-btn">Login</li>
               </ul>
             </nav>
+          </div>      
+          <div class="menu-btn">
+            <span></span>
+            <span></span>
           </div>
         </div>
       </header>
 
+      <div class="menu-burger__wrapper">
+        <nav>
+          <ul class="menu--burger-list">
+            <li class="menu--burger-item catalog" >
+              <a class="menu--burger-item" href="#">For Brands</a>
+            </li>
+            <li class="menu--burger-item">
+              <a class="menu--burger-item" href="#">About Us</a>
+            </li>
+            <li class="menu--burger-item">
+              <a class="menu--burger-item" href="#">Contact Us</a>
+            </li>
+            <li class="menu--burger-item">
+              <li class="list-button" id="login-btn">Login</li>
+            </li>
+          </ul>
+        </nav>
+      </div>
       <section class="hero">
-        <div class="container wow animate__animated animate__fadeInLeft" id="hero-container">
+        <div class="container " id="hero-container">
           <img src="/img/Splitted-text.svg" alt="" class="hero__title" />
           <p class="hero__subtitle">
             Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
@@ -184,7 +210,7 @@
       </section>
 
       <section class="promo">
-        <div class="container wow animate__animated animate__fadeInLeft">
+        <div class="container">
           <div class="promo__part">
             <img src="/img/first-count.svg" alt="" class="promo__part-count" />
             <p class="promo__part-title">
@@ -200,7 +226,7 @@
       </section>
 
       <section class="advice">
-        <div class="container  wow animate__animated animate__fadeInRight">
+        <div class="container  ">
           <img src="/img/lorem-ipsum.svg" alt="" class="advice__title">
 
           <div class="block">
@@ -232,7 +258,7 @@
       </section>
       
       <section class="outcasters">
-        <div class="container wow animate__animated animate__fadeInLeft">
+        <div class="container ">
           <img src="/img/the-outcasters.svg" alt="title" class="outcasters__title">
           <div class="content">
             <div class="block__our-vision">
@@ -262,7 +288,7 @@
       </section>
 
       <section class="reviews">
-        <div class="container wow animate__animated animate__fadeInRight">
+        <div class="container ">
           <img class="reviews__title" src="/img/people-say.svg" alt="">
         </div>
         <div class="content wow animate__animated animate__fadeInRight" >
@@ -316,7 +342,7 @@
       </section>
 
       <section class="join">
-        <div class="container wow animate__animated animate__fadeInLeft">
+        <div class="container">
           <img src="/img/Join-picture.webp" alt="" class="join__img">
           <div class="content">
             <h2 class="join__title">Join our Community</h2>
@@ -358,6 +384,6 @@
 
    
   
-    <script type="module" src="/js/index.min.js"></script>
+    <script type="module" src="/js/index.js"></script>
   </body>
 </html>

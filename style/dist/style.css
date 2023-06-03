@@ -45,6 +45,87 @@ html button {
   flex-direction: column;
   align-items: center;
 }
+.main .menu-burger__wrapper {
+  display: none;
+}
+@media (max-width: 576px) {
+  .main .menu-burger__wrapper {
+    display: block;
+    z-index: 2;
+  }
+  .main .menu-burger__wrapper .menu--burger-list {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 30%;
+    background: #141414;
+    transform: translateX(-150%);
+    transition: transform 0.5s;
+    z-index: 2;
+    margin: 0px;
+    display: flex;
+    flex-direction: column;
+    padding-top: 45px;
+    gap: 20px 0px;
+    align-items: center;
+  }
+  .main .menu-burger__wrapper .menu--burger-item {
+    text-decoration: none;
+    font-size: 13px;
+  }
+  .main .menu-burger__wrapper .menu--burger-list.active {
+    transform: translateX(0%);
+  }
+  .main .menu-burger__wrapper .list-button {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    width: 118px;
+    height: 40px;
+    background: rgba(19, 19, 19, 0.4);
+    backdrop-filter: blur(5px);
+    border-radius: 20px;
+    border: 1px solid;
+    border-color: rgba(81, 40, 136, 0.4) rgba(255, 255, 255, 0) rgba(245, 58, 238, 0.4) rgba(0, 0, 0, 0);
+    cursor: pointer;
+  }
+}
+@media (max-width: 576px) and (max-width: 768px) {
+  .main .menu-burger__wrapper .list-button {
+    width: 82px;
+    height: 30px;
+    font-size: 13px;
+  }
+}
+@media (max-width: 576px) {
+  .main .menu-burger__wrapper .menu-burger__wrapper li {
+    list-style-type: none;
+  }
+}
+.main .menu {
+  z-index: 2;
+}
+.main .menu__list {
+  gap: 24px;
+}
+@media (max-width: 768px) {
+  .main .menu__list {
+    gap: 7px;
+  }
+}
+@media (max-width: 576px) {
+  .main .menu__list {
+    display: none;
+  }
+}
+@media (max-width: 768px) {
+  .main .menu__list .menu__list-item {
+    font-size: 13px;
+  }
+}
 .main .popup {
   display: flex;
   position: absolute;
@@ -243,6 +324,19 @@ html button {
     width: 100%;
   }
 }
+.main .popup .popup__register .right-side .close__button {
+  background-color: transparent;
+  position: absolute;
+  right: 0;
+  top: 0;
+  margin-top: 20px;
+  margin-right: 20px;
+  cursor: pointer;
+  border: 0px;
+}
+.main .popup .popup__register .right-side .close__button .close-form__register {
+  width: 40px;
+}
 .main .popup .popup__register .right-side .choose {
   display: flex;
   flex-direction: row;
@@ -372,6 +466,19 @@ html button {
   margin: 0 auto;
   margin-top: 50px;
 }
+.main .popup .tell-us .close__button {
+  background-color: transparent;
+  position: absolute;
+  right: 0;
+  top: 0;
+  margin-top: 20px;
+  margin-right: 20px;
+  cursor: pointer;
+  border: 0px;
+}
+.main .popup .tell-us .close__button .close-form__register {
+  width: 40px;
+}
 .main .popup .tell-us .title {
   color: white;
 }
@@ -419,6 +526,13 @@ html button {
   position: absolute;
   margin-top: 30px;
   width: 100%;
+}
+@media (max-width: 576px) {
+  .main .header .container {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+  }
 }
 .main .header .container .header__inner {
   display: flex;
@@ -485,10 +599,51 @@ html button {
     font-size: 13px;
   }
 }
+.main .header .container .menu-btn {
+  display: none;
+}
+@media (max-width: 576px) {
+  .main .header .container .menu-btn {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-right: 20px;
+    margin-top: 10px;
+    width: 30px;
+    height: 30px;
+    position: relative;
+    overflow: hidden;
+    z-index: 3;
+  }
+  .main .header .container .menu-btn span {
+    width: 25px;
+    height: 2px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #ffffff;
+    transition: all 0.5s;
+    border-radius: 5px;
+  }
+  .main .header .container .menu-btn span:nth-of-type(1) {
+    width: 25px;
+    height: 2px;
+    top: calc(50% - 7px);
+  }
+  .main .header .container .menu-btn.active span {
+    top: 50%;
+    transform: translate(-50%, 0%) rotate(45deg);
+  }
+  .main .header .container .menu-btn.active span:nth-of-type(1) {
+    top: 50%;
+    transform: translate(-50%, 0%) rotate(-45deg);
+  }
+}
 .main .hero {
   display: flex;
   flex-direction: column;
-  align-items: center;
+  align-items: flex-start;
   justify-content: center;
   width: 100%;
   height: 100%;
@@ -1362,7 +1517,12 @@ html button {
   animation: blink 3s infinite;
 }
 
-.active {
+@media (max-width: 576px) {
+  .active-menu {
+    transform: translateX(0%) !important;
+  }
+}
+.isactive {
   background: rgba(101, 0, 149, 0.4);
   border-radius: 100px;
   padding-bottom: 7px;

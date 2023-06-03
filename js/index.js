@@ -1,38 +1,43 @@
 "use strict"
 
 const listItem = document.querySelectorAll(".list-item")
-const startBtn = document.querySelector(".hero__button")
 const readBtn = document.querySelector(".content__button")
 const arrowMore = document.querySelector(".learn-more__arrow")
 const loginBtn = document.getElementById("login-btn")
-let popup = document.querySelector(".popup")
-let popupLogin = document.querySelector(".popup__login")
-let popupRegister = document.querySelector(".popup__register")
-let fluencePartLogin = document.querySelector("#login-fluence")
-let brandPartLogin = document.querySelector("#login-brands")
-let fluencePartSign = document.querySelector("#sign-fluence")
-let brandPartSign = document.querySelector("#sign-brands")
-let heroContainer = document.getElementById("hero-container")
-let hero = document.querySelector(".hero")
-let journeyBtn = document.querySelector('.hero__button')
-let journey = document.querySelector(".tell-us")
+const popup = document.querySelector(".popup")
+const popupLogin = document.querySelector(".popup__login")
+const popupRegisterClose = document.querySelector(".close__button")
+const tellUsClose = document.querySelector(".tell-us__close")
+const popupRegister = document.querySelector(".popup__register")
+const fluencePartLogin = document.querySelector("#login-fluence")
+const brandPartLogin = document.querySelector("#login-brands")
+const fluencePartSign = document.querySelector("#sign-fluence")
+const brandPartSign = document.querySelector("#sign-brands")
+const heroContainer = document.getElementById("hero-container")
+const hero = document.querySelector(".hero")
+const journeyBtn = document.querySelector('.hero__button')
+const journey = document.querySelector(".tell-us")
+
+const menuBtn = document.querySelector('.menu-btn');
+const menu = document.querySelector(".menu--burger-list");
+
 
 fluencePartLogin.addEventListener("click" , ()=>{
-    fluencePartLogin.classList.add("active")
-    brandPartLogin.classList.remove("active") 
+    fluencePartLogin.classList.add("isactive")
+    brandPartLogin.classList.remove("isactive") 
 })
 brandPartLogin.addEventListener("click" , ()=>{
-    brandPartLogin.classList.add("active")
-    fluencePartLogin.classList.remove("active")
+    brandPartLogin.classList.add("isactive")
+    fluencePartLogin.classList.remove("isactive")
 })
 
 fluencePartSign.addEventListener("click" , ()=>{
-    fluencePartSign.classList.add("active")
-    brandPartSign.classList.remove("active") 
+    fluencePartSign.classList.add("isactive")
+    brandPartSign.classList.remove("isactive") 
 })
 brandPartSign.addEventListener("click" , ()=>{
-    brandPartSign.classList.add("active")
-    fluencePartSign.classList.remove("active")
+    brandPartSign.classList.add("isactive")
+    fluencePartSign.classList.remove("isactive")
 })
 
 journeyBtn.addEventListener("click" ,()=>{
@@ -59,8 +64,21 @@ loginBtn.addEventListener("click" , ()=>{
     loginBtn.style.display = "none"
     hero.style.paddingTop = 600 + "px"
     journey.style.display = "none"
+    popupRegister.style.display = "flex"
 })
 
+popupRegisterClose.addEventListener("click" , () =>{
+    popup.style.transform = "translateX(-200%)"
+    heroContainer.style.display = "flex"
+    loginBtn.style.display = "flex"
+    hero.style.paddingTop = 300 + "px"
+
+})
+tellUsClose.addEventListener("click" , ()=>{
+    popup.style.transform = "translateX(-200%)"
+    heroContainer.style.display = "flex"
+    hero.style.paddingTop = 300 + "px"
+})
 // ! ARROW
 arrowMore.onmouseenter = ()=>{
     arrowMore.style.transition = '2s'
@@ -83,13 +101,13 @@ listItem.forEach(item =>{
 })
 
 
-startBtn.onmouseenter = ()=>{
-    startBtn.style.border = "2px solid purple" 
-    startBtn.style.transition = "ease 2s"   
+journeyBtn.onmouseenter = ()=>{
+    journeyBtn.style.border = "2px solid purple" 
+    journeyBtn.style.transition = "ease 2s"   
 }
-startBtn.onmouseleave = ()=>{
-    startBtn.style.border = "1px solid gray" 
-    startBtn.style.transition = "ease 2s"   
+journeyBtn.onmouseleave = ()=>{
+    journeyBtn.style.border = "1px solid gray" 
+    journeyBtn.style.transition = "ease 2s"   
 }
 
 readBtn.onmouseenter = ()=>{
@@ -100,3 +118,18 @@ readBtn.onmouseleave = ()=>{
     readBtn.style.border = "2px solid purple" 
     readBtn.style.transition = "ease 2s"   
 }
+function burgerMenu() {
+    menuBtn.addEventListener('click', function () {
+        menuBtn.classList.toggle('active-menu');
+        menuBtn.classList.toggle('active');
+        menu.classList.toggle('active-menu');
+        menu.style.display = "flex"
+        if (menuBtn.classList.contains("active")) {
+            menuBtn.classList.add("active")
+        } else {
+            menuBtn.classList.remove("fixed")
+            menuBtn.classList.remove("left")
+        }
+    })
+}
+burgerMenu()
