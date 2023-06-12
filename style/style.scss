@@ -5,6 +5,20 @@ $fontFamily: "Montserrat";
 
 html {
   overflow-x: hidden;
+
+  body{
+    background-color: black;
+    animation: merge 3s forwards;
+  }
+  @keyframes merge {
+    0% {
+      opacity: 0;
+    }
+  
+    100% {
+      opacity: 1;
+    }
+  }
   p {
     font-family: $fontFamily;
     color: white;
@@ -1392,6 +1406,7 @@ html {
 .blink {
   animation: blink 3s infinite;
 }
+
 
 @include breakpoint(sm) {
   .active-menu {

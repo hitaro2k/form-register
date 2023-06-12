@@ -22,6 +22,25 @@ const menuBtn = document.querySelector('.menu-btn');
 const menu = document.querySelector(".menu--burger-list");
 
 
+window.addEventListener("load", function () {
+    var images = [];
+    document.querySelectorAll("img").forEach(function (img) {
+      images.push(img.src);
+    });
+
+    var imagesLoaded = 0;
+    for (var i = 0; i < images.length; i++) {
+      var img = new Image();
+      img.src = images[i];
+      img.onload = function () {
+        imagesLoaded++;
+        if (imagesLoaded == images.length) {
+          document.querySelector("#preloader").style.display = "none";
+        }
+      };
+    }
+});
+
 fluencePartLogin.addEventListener("click" , ()=>{
     fluencePartLogin.classList.add("isactive")
     brandPartLogin.classList.remove("isactive") 
