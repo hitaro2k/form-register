@@ -1,9 +1,10 @@
 "use strict"
-
+document.addEventListener("DOMContentLoaded" , function(){
 const listItem = document.querySelectorAll(".list-item")
 const readBtn = document.querySelector(".content__button")
 const arrowMore = document.querySelector(".learn-more__arrow")
-const loginBtn = document.getElementById("login-btn")
+const loginBtn = document.querySelectorAll(".list-button")
+console.log(loginBtn)
 const popup = document.querySelector(".popup")
 const popupLogin = document.querySelector(".popup__login")
 const popupRegisterClose = document.querySelector(".close__button_register")
@@ -79,37 +80,47 @@ journeyBtn.addEventListener("click" ,()=>{
 })
 
 // ! LOGIN
-loginBtn.onmouseenter = ()=>{
-    loginBtn.style.transition = '2s'
-    loginBtn.style.transform  = "scale(1.1)"
-}
-loginBtn.onmouseleave = ()=>{
-    loginBtn.style.transition = '2s'
-    loginBtn.style.transform  = "scale(1)"
-}
-loginBtn.addEventListener("click" , ()=>{
-    popup.style.transform = "translateX(0%)"
-    heroContainer.style.display = "none"
-    loginBtn.style.display = "none"
-    hero.style.paddingTop = 600 + "px"
-    journey.style.display = "none"
-    popupLogin.style.display = "flex"
+
+loginBtn.forEach(item =>{
+    
+    item.onmouseenter = ()=>{
+        item.style.transition = '2s'
+        item.style.transform  = "scale(1.1)"
+    }
+    item.onmouseleave = ()=>{
+        item.style.transition = '2s'
+        item.style.transform  = "scale(1)"
+    }
+    item.addEventListener("click" , ()=>{
+        popup.style.transform = "translateX(0%)"
+        heroContainer.style.display = "none"
+        item.style.display = "none"
+        hero.style.paddingTop = 600 + "px"
+        journey.style.display = "none"
+        popupLogin.style.display = "flex"
+        menuBtn.classList.remove('active-menu');
+        menuBtn.classList.remove('active');
+        menu.classList.remove('active-menu');
+        menu.style.display = "none"
+    })
+    
+    popupRegisterClose.addEventListener("click" , () =>{
+        popup.style.transform = "translateX(-200%)"
+        heroContainer.style.display = "flex"
+        item.style.display = "flex"
+        hero.style.paddingTop = 300 + "px"
+        popupRegister.style.display = "none"
+    })
+    popupLoginClose.addEventListener("click" , () =>{
+        popup.style.transform = "translateX(-200%)"
+        heroContainer.style.display = "flex"
+        item.style.display = "flex"
+        hero.style.paddingTop = 300 + "px"
+        popupLogin.style.display = "none"
+    })
+  
 })
 
-popupRegisterClose.addEventListener("click" , () =>{
-    popup.style.transform = "translateX(-200%)"
-    heroContainer.style.display = "flex"
-    loginBtn.style.display = "flex"
-    hero.style.paddingTop = 300 + "px"
-    popupRegister.style.display = "none"
-})
-popupLoginClose.addEventListener("click" , () =>{
-    popup.style.transform = "translateX(-200%)"
-    heroContainer.style.display = "flex"
-    loginBtn.style.display = "flex"
-    hero.style.paddingTop = 300 + "px"
-    popupLogin.style.display = "none"
-})
 tellUsClose.addEventListener("click" , ()=>{
     popup.style.transform = "translateX(-200%)"
     heroContainer.style.display = "flex"
@@ -160,6 +171,12 @@ function burgerMenu() {
         menuBtn.classList.toggle('active');
         menu.classList.toggle('active-menu');
         menu.style.display = "flex"
+        popup.style.transform = "translateX(-200%)"
+        popupRegister.style.display = "none"
+        popupLogin.style.display = "none"
+        loginBtn.forEach(item =>{
+            item.style.display = "flex"
+        })
         if (menuBtn.classList.contains("active")) {
             menuBtn.classList.add("active")
         } else {
@@ -169,3 +186,4 @@ function burgerMenu() {
     })
 }
 burgerMenu()
+})
