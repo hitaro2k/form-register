@@ -161,8 +161,7 @@ html {
       flex-direction: row;
       align-items: center;
       width: 100%;
-   
-     
+      
       @include breakpoint(md){
         flex-direction: column;
       }
@@ -173,6 +172,19 @@ html {
         width: 50%;
         margin-top: 80px;
         align-items: center;
+        .close__button_login{
+          background-color: transparent;
+          position: absolute;
+          left: 0;
+          top: 0;
+          margin-top: 20px;
+          margin-right: 20px;
+          cursor: pointer;
+          border: 0px;
+          .close-form__login{
+            width: 40px;
+          }
+        }
         @include breakpoint(md){
           width: 100%;
         }
@@ -308,7 +320,7 @@ html {
     .popup__register{
       height: 100%;
       border-radius: 40px;
-      display: flex;
+      display: none;
       flex-direction: row;
       align-items: center;
       width: 100%;
@@ -326,7 +338,7 @@ html {
         @include breakpoint(md){
           width: 100%;
         }
-        .close__button{
+        .close__button_register{
           background-color: transparent;
           position: absolute;
           right: 0;
@@ -419,7 +431,7 @@ html {
             border: none;
             cursor: pointer;
           }
-          .sign__title{
+          .haveaccount__title{
             display: flex;
             flex-direction: row;
             align-items: center;
@@ -430,7 +442,7 @@ html {
               line-height: 15px;
               color: #FFFFFF;
             }
-            .link{
+            .link__login{
               font-weight: 600;
               font-size: 12px;
               line-height: 15px;

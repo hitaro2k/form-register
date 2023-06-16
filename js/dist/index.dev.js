@@ -6,7 +6,8 @@ var arrowMore = document.querySelector(".learn-more__arrow");
 var loginBtn = document.getElementById("login-btn");
 var popup = document.querySelector(".popup");
 var popupLogin = document.querySelector(".popup__login");
-var popupRegisterClose = document.querySelector(".close__button");
+var popupRegisterClose = document.querySelector(".close__button_register");
+var popupLoginClose = document.querySelector(".close__button_login");
 var tellUsClose = document.querySelector(".tell-us__close");
 var popupRegister = document.querySelector(".popup__register");
 var fluencePartLogin = document.querySelector("#login-fluence");
@@ -17,8 +18,21 @@ var heroContainer = document.getElementById("hero-container");
 var hero = document.querySelector(".hero");
 var journeyBtn = document.querySelector('.hero__button');
 var journey = document.querySelector(".tell-us");
+var showReg = document.querySelector(".link");
+var linkLogin = document.querySelector(".link__login");
 var menuBtn = document.querySelector('.menu-btn');
 var menu = document.querySelector(".menu--burger-list");
+
+showReg.onclick = function () {
+  popupLogin.style.display = "none";
+  popupRegister.style.display = "flex";
+};
+
+linkLogin.onclick = function () {
+  popupLogin.style.display = "flex";
+  popupRegister.style.display = "none";
+};
+
 window.addEventListener("load", function () {
   var images = [];
   document.querySelectorAll("img").forEach(function (img) {
@@ -79,13 +93,21 @@ loginBtn.addEventListener("click", function () {
   loginBtn.style.display = "none";
   hero.style.paddingTop = 600 + "px";
   journey.style.display = "none";
-  popupRegister.style.display = "flex";
+  popupLogin.style.display = "flex";
 });
 popupRegisterClose.addEventListener("click", function () {
   popup.style.transform = "translateX(-200%)";
   heroContainer.style.display = "flex";
   loginBtn.style.display = "flex";
   hero.style.paddingTop = 300 + "px";
+  popupRegister.style.display = "none";
+});
+popupLoginClose.addEventListener("click", function () {
+  popup.style.transform = "translateX(-200%)";
+  heroContainer.style.display = "flex";
+  loginBtn.style.display = "flex";
+  hero.style.paddingTop = 300 + "px";
+  popupLogin.style.display = "none";
 });
 tellUsClose.addEventListener("click", function () {
   popup.style.transform = "translateX(-200%)";
